@@ -1,0 +1,108 @@
+\documentclass{article}
+    \usepackage[spanish,mexico,es-nolayout]{babel}
+    \usepackage[utf8]{inputenc}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{amssymb,latexsym}
+\usepackage{graphicx}
+\usepackage{amsmath,amscd,mathrsfs,dsfont}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{color,framed}
+\usepackage{tikz}
+\usepackage{tkz-berge}
+\usepackage{makeidx}
+\usepackage{url}
+\usepackage{xspace}
+\usepackage{tocbibind}
+\usepackage{rotating}
+\usepackage{young}
+\usepackage{ytableau}
+\usepackage{enumerate} 
+\usepackage{eqnarray}
+\usepackage{tipa,cancel}
+\usepackage[left=3.8cm,top=4.5cm,right=3.8cm,bottom=4cm]{geometry}
+\usepackage{lscape}
+\usepackage{textcomp}
+\usepackage{upgreek}
+\usepackage{multirow} 
+%%%%%%%%%%%%%%%%%
+%%%%diagramas xymatrix%%%
+\usepackage{xcolor}
+\usepackage{amsthm,graphics,latexsym,tabularx,shapepar}  
+\usepackage[color,matrix,arrow,pdftex,cmtip]{xy} %xetex
+\usepackage{fancybox}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{xcolor}
+\usepackage{pstricks}  	    %%
+\usepackage{stackengine}
+\usepackage{ragged2e}
+\definecolor{mygreen}{cmyk}{.5 0 1 .5}
+\usepackage{ wasysym }
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{proposition}[theorem]{Proposition}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{notation}[theorem]{Notation}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{lemma}[theorem]{Lemma}
+\DeclareMathOperator{\rango}{rango}
+\DeclareMathOperator{\orb}{orb}
+\DeclareMathOperator{\stab}{Stab}
+\newcounter{in}
+\newcounter{ini}
+
+\makeindex
+
+\newcommand{\elespacio}{1.4cm}
+\stackMath
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{center}
+\huge{Braid Groups}
+\end{center}
+\vspace{0.5cm}
+\justify
+%\section*{Introducci\'on}
+
+
+(*) composition?
+
+$\sigma_i$ permutations  
+
+The \emph{n-strand braid groups} $B_n$ has the presentation:
+\begin{equation*}
+B_n=\langle\sigma_1,\dots,\sigma_{n-1}\mid \sigma_i\sigma_j=\sigma_j\sigma_i \mbox{ for } |i-j|\geq 2,\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1}\rangle.
+\end{equation*}
+
+\section{Mapping class groups}
+
+Let $\mathcal{S}$ an oriented compact surface, possibly with boundary, and $\mathcal{P}$ be a finite set of distinguished interior points of $\mathcal{S}$.
+
+The \emph{mapping clas group} $\mathcal{MCG(S,P)}$ of the surface $\mathcal{S}$ relative to $\mathcal{P}$ is the group of all isotopy classes of orientation-preserving homeomorphisms $\psi:\mathcal{S}\rightarrow\mathcal{S}$ satisfying $\psi_{|\partial S}=id$ and $\psi(\mathcal{P})=\mathcal{P}$.
+
+\begin{proposition}
+	There is an isomorphism $B_n\cong \mathcal{MCG}(D_n)$, where $D_n$ is the disk $D^2$ with $n$ regularly spaced points.
+\end{proposition}
+
+\textcolor{red}{Dibujo?}
+
+\section*{Pure braids}
+
+\textcolor{red}{Definition of pure braid.}
+
+\begin{theorem}
+The pure braid group $P_n$ is biorderable for all $n\geq 1$.
+\end{theorem}
+
+
+\section*{Order in $B_n$}
+\bibliographystyle{plain}
+\bibliography{biblio-maestria-anteproyecto}
+
+\end{document}
