@@ -1,0 +1,203 @@
+\documentclass[xcolor=dvipsnames]{beamer}
+\setbeamercovered{transparent}
+\usepackage{beamerthemedefault}
+\usepackage{polyglossia}
+\setmainlanguage{spanish}
+%\usepackage{beamerthemeIlmenau}
+%\usepackage{color}  % for \textcolor{red}{blah}
+%\usepackage[dvipsnames]{xcolor}
+\usepackage{xcolor}
+\usepackage{auto-pst-pdf}
+\usecolortheme{spruce}
+\usepackage{graphicx}
+\usepackage{verbatim} % for \begin{comment}
+\usepackage{amsmath,amscd,amsthm}
+\usepackage{amssymb,latexsym}
+\usepackage{amscd,amsfonts}
+\usepackage[vcentermath]{youngtab}
+\usepackage{mathrsfs,dsfont}
+%%%\usepackage{pstricks}
+\usepackage[usenames,dvipsnames]{pstricks}
+\usepackage{stackengine}
+\usepackage{multirow}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.13}
+\usepackage{braids}
+
+
+\title{Braid Groups}
+%\subtitle{\textbf{Subtitle}}
+\author{Ernesto V\'azquez \\ Briseida Trejo}
+\institute{UNAM}
+
+\begin{document}
+
+\maketitle
+\frame{
+\uncover<1->{
+  The \alert{n-strand braid groups} $B_n$ has the presentation:
+\begin{equation*}
+B_n=\langle\sigma_1,\dots,\sigma_{n-1}\mid \sigma_i\sigma_j=\sigma_j\sigma_i \mbox{ for } |i-j|\geq 2,\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1}\rangle.
+\end{equation*} 
+}
+} 
+
+\frame{
+\frametitle{Pure braids}
+\uncover<1->{
+Two words $\beta_1$ and $\beta_2$ represent the same braid $\Leftrightarrow$ $\beta_1\beta_2^{-1}=1$.
+}
+
+\uncover<2->{
+\begin{block}{Definition}
+	Dibujo de pure braid
+\end{block}
+}
+
+\uncover<3->{
+\begin{block}{Theorem}
+The pure braid group $P_n$ is biorderable for all $n\geq 1$.
+\end{block}
+}
+}
+
+\frame{
+\begin{tikzpicture}
+\braid a_1 a_2;
+\end{tikzpicture}
+}
+
+\frame{
+\begin{tikzpicture}
+\braid[color=red] | a_1 a_2;
+\end{tikzpicture}
+\begin{tikzpicture}
+\braid a_1 | a_2;
+\end{tikzpicture}
+}
+
+\frame{
+\begin{tikzpicture}
+\braid[
+ style all floors={fill=yellow},
+ style floors={1}{dashed,fill=yellow!50!green},
+ floor command={%
+ \fill (\floorsx,\floorsy) rectangle (\floorex,\floorey);
+ \draw (\floorsx,\floorsy) -- (\floorex,\floorsy);
+ },
+ line width=2pt,
+ style strands={1}{red},
+ style strands={2}{blue},
+ style strands={3}{green}
+] (braid) at (2,0) | s_1-s_3-s_5 | s_2^{-1}-s_4| s_1-s_4 s_2^{-1} s_1-s_3 s_2^{-1}-s_4^{-1};
+\fill[yellow] (2,0) circle (4pt);
+\fill[purple] (braid) circle (4pt);
+\node[at=(braid-3-s),pin=north west:strand 3] {};
+\node[at=(braid-3-e),pin=south west:strand 3] {};
+\node[at=(braid-rev-3-s),pin=north east:strand 3 (from bottom)] {};
+\node[at=(braid-rev-3-e),pin=south east:strand 3 (from bottom)] {};
+\end{tikzpicture}
+}
+
+\frame{
+\frametitle{Mapping class groups}
+\uncover<1->{
+\begin{block}{Definition}
+Let $\mathcal{S}$ an oriented compact surface, possibly with boundary, and $\mathcal{P}$ be a finite set of distinguished interior points of $\mathcal{S}$.\\
+}
+
+\uncover<2->{
+The \alert{mapping clas group} $\mathcal{MCG(S,P)}$ of the surface $\mathcal{S}$ relative to $\mathcal{P}$ is the group of all isotopy classes of orientation-preserving homeomorphisms $\psi:\mathcal{S}\rightarrow\mathcal{S}$ satisfying $\psi_{|\partial S}=id$ and $\psi(\mathcal{P})=\mathcal{P}$.
+\end{block}
+}
+
+\uncover<3->{
+\begin{block}{Proposition}
+	There is an isomorphism $B_n\cong \mathcal{MCG}(D_n)$, where $D_n$ is the disk $D^2$ with $n$ regularly spaced points.
+\end{block}
+}
+%\textcolor{red}{Dibujo?}
+}
+
+\frame{
+\frametitle{Order in $B_n$}
+$\sigma$-positive
+
+subword property
+
+\begin{block}{Proposition}
+	
+\end{block}
+
+}
+
+%\frame{
+%\uncover<1->{
+%  \begin{block}{Definición}
+%    Dado $S$ un conjunto finito de finito de puntos,
+%    el \alert{casco convexo} de $S$, es el conjunto convexo m\'as peque\~no que contiene a $S$.
+%  \end{block}    
+%}
+%\uncover<2->{
+%  \begin{block}{Definición}
+%    Una \alert{$n$-politopo convexo} es el casco convexo de un conjunto finito de puntos que est\'an en un espacio de dimensi\'on $n$.
+%  \end{block} 
+%}  
+%\invisible<1,2>{
+%  \alert{Ejemplos}
+%  \begin{figure}[!htbp]\centering \psset{xunit=0.8}\psset{yunit=0.8}
+%  \begin{minipage}{0.9\linewidth}
+%  \centering
+%    %\resizebox{0.6\textwidth}{!}{\input{decagono.tex}}
+% 
+%   %\hspace{0.3cm} 2-politopo convexo \qquad 2-politopo no convexo 
+%   \end{minipage}
+%}
+%\end{figure}
+%} 
+
+%\frame{
+%\begin{center}
+%\frametitle{Torsiones derechas}
+%\visible<1->{
+%\begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
+%  \resizebox{0.25\textwidth}{!}{\input{Petrie-r0r1r2r3-coloreado.tex}}
+%\end{figure}
+%\vspace{0.4cm}
+%}
+% 
+%\visible<2->{  
+%\begin{minipage}{0.3\linewidth}
+%   \centering
+%  \begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
+%  \resizebox{0.8\textwidth}{!}{\input{torsion-derecha-1-1.tex}}
+%  \end{figure}
+%\end{minipage}
+%\begin{minipage}{0.3\linewidth}
+%      \centering
+%  \begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
+%  \resizebox{0.8\textwidth}{!}{\input{torsion-derecha-2-1.tex}}
+%  \end{figure}
+%\end{minipage}
+%\begin{minipage}{0.3\linewidth}
+%      \centering
+%  \begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
+%  \resizebox{0.79\textwidth}{!}{\input{torsion-derecha-3-1.tex}}
+%  \end{figure}
+%\end{minipage}
+%}
+%\end{center}
+%}
+
+
+
+
+
+\frame{
+\begin{center}
+\Huge Thanks.
+\end{center}
+}
+%%%\resizebox{0.1\textwidth}{!}{\input{cubo.tex}}
+\end{document}
