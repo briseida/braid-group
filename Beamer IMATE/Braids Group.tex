@@ -55,10 +55,10 @@
 
 
 
-\title{Braids group}
+\title{Braid groups}
 \author{Briseida Trejo \\ Ernesto Vázquez %\\ \texttt{evazquez@matem.unam.mx}
 }
-\date{Escuela simetrías \\ FECHA} %Fecha o evento en que se presentará la plática
+\date{Summer Graduate School MSRI-CMO: Geometric Group Theory \\ FECHA} %Fecha o evento en que se presentará la plática
 \institute{Instituto de Matemáticas, UNAM}
 
 \begin{document}
@@ -69,7 +69,7 @@
 
 
 %%% PRELIMINARES
-\section{Preliminares}
+%\section{Preliminares}
 
 \begin{frame}{Título}
 puras chingonerías
@@ -86,15 +86,237 @@ B_n=\langle\sigma_1,\dots,\sigma_{n-1}\mid \sigma_i\sigma_j=\sigma_j\sigma_i \mb
 }
 
 \frame{
-\frametitle{Pure braids}
-\uncover<1->{
-Two words $\beta_1$ and $\beta_2$ represent the same braid $\Leftrightarrow$ $\beta_1\beta_2^{-1}=1$.
+\frametitle{Generators}
+%\uncover<1->{
+  \centering 
+  \begin{minipage}{0.25\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1;
+	\end{tikzpicture}
+	
+	$\sigma_1$
+	\end{minipage}
+	\quad
+%}
+	\begin{minipage}{0.25\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_2;
+	\end{tikzpicture}
+	
+	$\sigma_2$
+	\end{minipage}
+	\quad
+	\begin{minipage}{0.25\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_3;
+	\end{tikzpicture}
+	
+	$\sigma_3$
+	\end{minipage}
+	
+	\vspace{0.7cm}
+	\begin{minipage}{0.25\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1^{-1};
+	\end{tikzpicture}
+	
+	$\sigma_1^{-1}$
+	\end{minipage}
+	\quad
+%}
+	\begin{minipage}{0.25\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_2^{-1};
+	\end{tikzpicture}
+	
+	$\sigma_2^{-1}$
+	\end{minipage}
+	\quad
+	\begin{minipage}{0.25\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_3^{-1};
+	\end{tikzpicture}
+	
+	$\sigma_3^{-1}$
+	\end{minipage}
 }
 
-\uncover<2->{
-\begin{block}{Definition}
-	Dibujo de pure braid
-\end{block}
+\frame{
+\frametitle{Relations}
+%\uncover<1->{
+  \centering 
+  \begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1 a_3;
+	\end{tikzpicture}
+	
+	$\sigma_1\sigma_3$
+	\end{minipage}
+	=
+%}
+	\begin{minipage}{0.2\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_3 a_1;
+	\end{tikzpicture}
+	
+	$\sigma_3\sigma_1$
+	\end{minipage}
+	\quad\quad\quad
+	\begin{minipage}{0.25\linewidth}
+	$\sigma_i\sigma_j=\sigma_j\sigma_i$ \\ if $|i-j|\geq 2$
+	\end{minipage}
+	
+	\vspace{0.7cm}
+	  \begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=3,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1 a_2 a_1;
+	\end{tikzpicture}
+	
+	$\sigma_1\sigma_2\sigma_1$
+	\end{minipage}
+	=
+%}
+	\begin{minipage}{0.2\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=3,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_2 a_1 a_2;
+	\end{tikzpicture}
+	
+	$\sigma_2\sigma_1\sigma_2$
+	\end{minipage}
+	\quad
+	\begin{minipage}{0.35\linewidth}
+	$\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1}$ 
+	\end{minipage}
+}
+
+\frame{
+\frametitle{Multiplication (Concatenation)}
+%\uncover<1->{
+  \centering 
+  \begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1;
+	\end{tikzpicture}
+	\end{minipage}
+	*
+%}
+	\begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1 a_2 a_1;
+	\end{tikzpicture}
+	\end{minipage}
+	=
+%}
+	\begin{minipage}{0.2\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [
+		number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		 a_1 a_1 a_2 a_1;
+	\end{tikzpicture}
+	\end{minipage}
+}
+
+\frame{
+\frametitle{Multiplication (Concatenation)}
+%\uncover<1->{
+  \centering
+  \fbox{ 
+  \begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1;
+	\end{tikzpicture}
+	\end{minipage}
+	}
+	*
+%}
+	\begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1 a_2 a_1;
+	\end{tikzpicture}
+	\end{minipage}
+	=
+%}
+	\begin{minipage}{0.2\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [
+		number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		 |a_1 a_1 a_2 a_1;
+	\end{tikzpicture}
+	\end{minipage}
+}
+
+\frame{
+\frametitle{Pure braids}
+\uncover<1->{
+Two words $\beta_1,\beta_2\in B_n$ represent the same braid $\Leftrightarrow$ $\beta_1\beta_2^{-1}=1$.
+}
+}
+
+\frame{
+\frametitle{Pure braids}
+\uncover<1->{
+%\begin{block}{Definition}
+  \centering 
+  \begin{minipage}{0.25\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [
+			line width=2pt,
+ 			style strands={1}{green},
+ 			style strands={2}{yellow},
+ 			style strands={3}{blue},
+ 			style strands={4}{red}]
+ 			a_2 a_1^{-1} a_3 a_1^{-1} a_3 a_2 ;
+	\end{tikzpicture}
+	
+	Pure braid
+	\end{minipage}
+	\hspace{0.5cm}
+	\begin{minipage}{0.25\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [
+			line width=2pt,
+ 			style strands={1}{green},
+ 			style strands={2}{yellow},
+ 			style strands={3}{blue},
+ 			style strands={4}{red}]
+ 			a_1 a_2^{-1} a_1 a_3 a_2^{-1} a_3^{-1};
+	\end{tikzpicture}
+	
+	Not pure
+	\end{minipage}
+%\end{block}
 }
 
 \uncover<3->{
@@ -106,7 +328,11 @@ The pure braid group $P_n$ is biorderable for all $n\geq 1$.
 
 \frame{
 \begin{tikzpicture}
-\braid a_1 a_2;
+\braid [
+ style strands={1}{red},
+ style strands={2}{blue},
+ style strands={3}{green}]
+ a_2 a_1^{-1} a_3 a_1^{-1} a_3 a_2 ;
 \end{tikzpicture}
 }
 
