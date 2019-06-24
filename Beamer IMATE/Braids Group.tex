@@ -71,23 +71,52 @@
 %%% PRELIMINARES
 %\section{Preliminares}
 
-\begin{frame}{Título}
-puras chingonerías
-\end{frame}
+%\begin{frame}{Título}
+%puras chingonerías
+%\end{frame}
 
 \frame{
-\frametitle{Puras chingonerías}
+\frametitle{Braids}
 \uncover<1->{
-  The \alert{n-strand braid groups} $B_n$ has the presentation:
+	\begin{block}{Definition}
+		An \alert{$n$-braid} is a collection of $n$ disjoint strings.
+	\end{block}
+}
+\uncover<2->{
+	\begin{block}{Examples}
+	\centering
+	\begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=3,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1 a_2 a_1;
+	\end{tikzpicture}
+	
+	3-braid
+	\end{minipage}\quad\quad
+	\begin{minipage}{0.2\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=3,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red},height=3cm]
+		1;
+	\end{tikzpicture}
+	
+	$id$
+	\end{minipage}
+	\end{block}
+}
+}
+
+\frame{
+\frametitle{Braid groups}
+\uncover<1->{
+  The \alert{n-strand braid group} $B_n$ has the presentation:
 \begin{equation*}
 B_n=\langle\sigma_1,\dots,\sigma_{n-1}\mid \sigma_i\sigma_j=\sigma_j\sigma_i \mbox{ for } |i-j|\geq 2,\sigma_i\sigma_{i+1}\sigma_i=\sigma_{i+1}\sigma_i\sigma_{i+1}\rangle.
 \end{equation*}
 }
-}
-
-\frame{
-\frametitle{Generators}
-%\uncover<1->{
+\uncover<2->{
+  \begin{block}{Generators of $B_4$}
   \centering 
   \begin{minipage}{0.25\linewidth}
   	\centering
@@ -151,6 +180,8 @@ B_n=\langle\sigma_1,\dots,\sigma_{n-1}\mid \sigma_i\sigma_j=\sigma_j\sigma_i \mb
 	
 	$\sigma_3^{-1}$
 	\end{minipage}
+	\end{block}
+	}
 }
 
 \frame{
@@ -276,9 +307,84 @@ B_n=\langle\sigma_1,\dots,\sigma_{n-1}\mid \sigma_i\sigma_j=\sigma_j\sigma_i \mb
 }
 
 \frame{
-\frametitle{Pure braids}
+\frametitle{The word problem}
 \uncover<1->{
 Two words $\beta_1,\beta_2\in B_n$ represent the same braid $\Leftrightarrow$ $\beta_1\beta_2^{-1}=1$.
+}
+  \centering 
+\uncover<2->{
+  \begin{minipage}{0.2\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+ 			a_1 a_3;
+	\end{tikzpicture}
+	
+	$\sigma_1\sigma_3$
+	\end{minipage}
+	=
+	\begin{minipage}{0.2\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_3 a_1;
+	\end{tikzpicture}
+	
+	$\sigma_3\sigma_1$
+	\end{minipage}
+	\vspace{0.2cm}
+}
+
+\uncover<3->{
+	$\Leftrightarrow$
+	
+	\vspace{0.2cm}
+	\begin{minipage}{0.15\linewidth}
+  	\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_1 a_3;
+	\end{tikzpicture}
+	
+	$\sigma_1\sigma_3$
+	\end{minipage}
+}
+\uncover<4->{
+    *
+	\begin{minipage}{0.15\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_3^{-1} a_1^{-1};
+	\end{tikzpicture}
+	
+	$\sigma_3^{-1}\sigma_1^{-1}$
+	\end{minipage}
+}	
+\uncover<5->{
+	=
+	\begin{minipage}{0.15\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red}]
+		a_1 a_3 a_3^{-1} a_1^{-1};
+	\end{tikzpicture}
+	
+	$\sigma_1\sigma_3\sigma_3^{-1}\sigma_1^{-1}$
+	\end{minipage}
+}
+\uncover<6->{	
+	=
+	\begin{minipage}{0.15\linewidth}
+		\centering
+	\begin{tikzpicture}[scale=0.5]
+		\braid [number of strands=4,line width=2pt,style strands={1}{green},style strands={2}{yellow},style strands={3}{blue},style strands={4}{red},height=4cm]
+		1;
+		
+	\end{tikzpicture}
+	
+	$id$
+	\end{minipage}
 }
 }
 
@@ -300,6 +406,8 @@ Two words $\beta_1,\beta_2\in B_n$ represent the same braid $\Leftrightarrow$ $\
 	\end{tikzpicture}
 	
 	Pure braid
+	}
+\uncover<2->{
 	\end{minipage}
 	\hspace{0.5cm}
 	\begin{minipage}{0.25\linewidth}
@@ -316,7 +424,6 @@ Two words $\beta_1,\beta_2\in B_n$ represent the same braid $\Leftrightarrow$ $\
 	
 	Not pure
 	\end{minipage}
-%\end{block}
 }
 
 \uncover<3->{
@@ -324,6 +431,38 @@ Two words $\beta_1,\beta_2\in B_n$ represent the same braid $\Leftrightarrow$ $\
 The pure braid group $P_n$ is biorderable for all $n\geq 1$.
 \end{block}
 }
+}
+
+\frame{
+\frametitle{Mapping class groups}
+\uncover<1->{
+\begin{block}{Definition}
+Let $\mathcal{S}$ an oriented compact surface, possibly with boundary, and $\mathcal{P}$ be a finite set of distinguished interior points of $\mathcal{S}$.\\
+}
+
+\uncover<2->{
+The \alert{mapping clas group} $\mathcal{MCG(S,P)}$ of the surface $\mathcal{S}$ relative to $\mathcal{P}$ is the group of all isotopy classes of orientation-preserving homeomorphisms $\psi:\mathcal{S}\rightarrow\mathcal{S}$ satisfying $\psi_{|\partial S}=id$ and $\psi(\mathcal{P})=\mathcal{P}$.
+\end{block}
+}
+
+\uncover<3->{
+\begin{block}{Proposition}
+	There is an isomorphism $B_n\cong \mathcal{MCG}(D_n)$, where $D_n$ is the disk $D^2$ with $n$ regularly spaced points.
+\end{block}
+}
+%\textcolor{red}{Dibujo?}
+}
+
+\frame{
+\frametitle{Order in $B_n$}
+$\sigma$-positive
+
+subword property
+
+\begin{block}{Proposition}
+
+\end{block}
+
 }
 
 \frame{
@@ -367,98 +506,6 @@ The pure braid group $P_n$ is biorderable for all $n\geq 1$.
 \node[at=(braid-rev-3-e),pin=south east:strand 3 (from bottom)] {};
 \end{tikzpicture}
 }
-
-\frame{
-\frametitle{Mapping class groups}
-\uncover<1->{
-\begin{block}{Definition}
-Let $\mathcal{S}$ an oriented compact surface, possibly with boundary, and $\mathcal{P}$ be a finite set of distinguished interior points of $\mathcal{S}$.\\
-}
-
-\uncover<2->{
-The \alert{mapping clas group} $\mathcal{MCG(S,P)}$ of the surface $\mathcal{S}$ relative to $\mathcal{P}$ is the group of all isotopy classes of orientation-preserving homeomorphisms $\psi:\mathcal{S}\rightarrow\mathcal{S}$ satisfying $\psi_{|\partial S}=id$ and $\psi(\mathcal{P})=\mathcal{P}$.
-\end{block}
-}
-
-\uncover<3->{
-\begin{block}{Proposition}
-	There is an isomorphism $B_n\cong \mathcal{MCG}(D_n)$, where $D_n$ is the disk $D^2$ with $n$ regularly spaced points.
-\end{block}
-}
-%\textcolor{red}{Dibujo?}
-}
-
-\frame{
-\frametitle{Order in $B_n$}
-$\sigma$-positive
-
-subword property
-
-\begin{block}{Proposition}
-
-\end{block}
-
-}
-
-%\frame{
-%\uncover<1->{
-%  \begin{block}{Definición}
-%    Dado $S$ un conjunto finito de finito de puntos,
-%    el \alert{casco convexo} de $S$, es el conjunto convexo m\'as peque\~no que contiene a $S$.
-%  \end{block}
-%}
-%\uncover<2->{
-%  \begin{block}{Definición}
-%    Una \alert{$n$-politopo convexo} es el casco convexo de un conjunto finito de puntos que est\'an en un espacio de dimensi\'on $n$.
-%  \end{block}
-%}
-%\invisible<1,2>{
-%  \alert{Ejemplos}
-%  \begin{figure}[!htbp]\centering \psset{xunit=0.8}\psset{yunit=0.8}
-%  \begin{minipage}{0.9\linewidth}
-%  \centering
-%    %\resizebox{0.6\textwidth}{!}{\input{decagono.tex}}
-%
-%   %\hspace{0.3cm} 2-politopo convexo \qquad 2-politopo no convexo
-%   \end{minipage}
-%}
-%\end{figure}
-%}
-
-%\frame{
-%\begin{center}
-%\frametitle{Torsiones derechas}
-%\visible<1->{
-%\begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
-%  \resizebox{0.25\textwidth}{!}{\input{Petrie-r0r1r2r3-coloreado.tex}}
-%\end{figure}
-%\vspace{0.4cm}
-%}
-%
-%\visible<2->{
-%\begin{minipage}{0.3\linewidth}
-%   \centering
-%  \begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
-%  \resizebox{0.8\textwidth}{!}{\input{torsion-derecha-1-1.tex}}
-%  \end{figure}
-%\end{minipage}
-%\begin{minipage}{0.3\linewidth}
-%      \centering
-%  \begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
-%  \resizebox{0.8\textwidth}{!}{\input{torsion-derecha-2-1.tex}}
-%  \end{figure}
-%\end{minipage}
-%\begin{minipage}{0.3\linewidth}
-%      \centering
-%  \begin{figure}[!htbp]\centering \psset{xunit=0.7}\psset{yunit=0.7}
-%  \resizebox{0.79\textwidth}{!}{\input{torsion-derecha-3-1.tex}}
-%  \end{figure}
-%\end{minipage}
-%}
-%\end{center}
-%}
-
-
 
 
 
